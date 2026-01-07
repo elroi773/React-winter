@@ -2,6 +2,8 @@ import { useState } from "react";
 import Light from "./components/Light";
 import Counter from "./components/Counter";
 import LikeButton from "./components/LikeButton";
+import SearchForm from "./components/SearchForm";
+import Tabs from "./components/Tabs";
 function App() {
    return (
     <>
@@ -11,6 +13,10 @@ function App() {
       <Counter />
       <hr />
       <LikeButton />
+      <hr />
+      <Tabs />
+      <hr />
+      <SearchForm />
       <hr />
     </>
   )
