@@ -16,7 +16,15 @@ export default function Register(){
         });
     }
 
+    const onSubmit = () => {
+        if(input.name === ""){
+            inputRef.current.focus();
+        }
+    }
+
     const countRef = useRef(0);
+    const inputRef = useRef();
+
     countRef.current++;
     console.log("렌더링 수 : " + countRef.current);
 
@@ -32,7 +40,19 @@ export default function Register(){
         birthday   
     })
 
-
+    const on_Submit = () => {
+        if(input.name === ""){
+            inputRef.current.focus();
+            return;
+        }
+        alert(`
+            이름 : ${name}
+            생일 : ${birthday}
+            국적 : ${country}
+            자기소개 : ${bio}
+        `); 
+        
+    };
     const onChange = (e) => {
         setInput({
             ...input,
@@ -46,7 +66,7 @@ export default function Register(){
         <div>
             <h1>회원가입</h1>
             <div>
-                이름 : <input type="text" name="name" value={name} onChange={onChange}/><br/>
+                이름 : <input type="text" name="name" value={name} onChange={onChange} ref={inputRef}/><br/>
             </div>
             <div>
                 생일 : <input type="date" name="birthday" value={birthday} onChange={onBirthdayChange}/><br/>
@@ -63,6 +83,8 @@ export default function Register(){
                 자기소개 :
                 <textarea name="bio" value={bio} onChange={(e) => setbio(e.target.value)}></textarea>
             </div>
+            <button onClick={onSubmit}>제출</button>
         </div>
     )
 }
+
