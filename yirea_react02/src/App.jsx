@@ -1,23 +1,10 @@
-import { useState } from "react";
-import Light from "./components/Light";
-import Counter from "./components/Counter";
-import LikeButton from "./components/LikeButton";
-import SearchForm from "./components/SearchForm";
-import Tabs from "./components/Tabs";
+import { useState } from 'react'
+import Register from './components/Register'
 function App() {
-   return (
+
+  return (
     <>
-      <h1>useState() hook 함수 예제 (1)</h1>
-      <Light />
-      <hr />
-      <Counter />
-      <hr />
-      <LikeButton />
-      <hr />
-      <Tabs />
-      <hr />
-      <SearchForm />
-      <hr />
+      <Register />
     </>
   )
 }
