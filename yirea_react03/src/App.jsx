@@ -1,38 +1,22 @@
-import Controller from "./components/Controller";
-import Viewer from "./components/Viewer";
-import Even from "./components/Even";
-import { useState, useEffect } from "react";
+import { Routes, Route } from 'react-router-dom'
+import Nav from './components/common/Navi'
+import Home from './components/Home'
+import Userlist from './components/UserList'
+import SimpleCounterPage from './pages/SimpleCounterPage'
+import Timer from './components/Timer'
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [input, setInput] = useState("");
-
-  useEffect(() => {
-    console.log("useEffect 업데이트");
-  }, [count]);
-
-  function onClickButton(num) {
-    setCount(count + num);
-  }
   return (
-    <>
-      <h1>simple Counter</h1>
-      <input
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-        }}
-      />
-      {input}
-      <div>
-        <Viewer count={count} />
-        {count % 2 === 0 ? <Even /> : null}
-      </div>
-      <div>
-        <Controller onClickButton={onClickButton} />
-      </div>
-    </>
-  );
+    <div>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/userlist" element={<Userlist />} />
+        <Route path="/simplecounter" element={<SimpleCounterPage />} />
+        <Route path="/timer" element={<Timer />} />
+      </Routes>
+    </div>
+  )
 }
 
-export default App;
+export default App
