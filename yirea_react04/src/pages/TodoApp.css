@@ -1,0 +1,64 @@
+
+:root {
+  --todo-bg: #f6f7fb;
+  --todo-card: #ffffff;
+  --todo-text: #1f2937;
+  --todo-subtext: #6b7280;
+  --todo-line: rgba(17, 24, 39, 0.08);
+  --todo-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --todo-radius: 18px;
+}
+
+.Todo {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 22px;
+  background: var(--todo-card);
+  border-radius: var(--todo-radius);
+  box-shadow: var(--todo-shadow);
+  border: 1px solid var(--todo-line);
+  color: var(--todo-text);
+}
+
+body {
+  background: var(--todo-bg);
+}
+
+.Todo > * + * {
+  margin-top: 18px;
+}
+
+.Todo > :nth-child(3) {
+  padding-top: 18px;
+  border-top: 1px solid var(--todo-line);
+}
+
+.Todo input,
+.Todo button,
+.Todo textarea {
+  font: inherit;
+}
+
+.Todo button {
+  transition: transform 0.06s ease, opacity 0.2s ease;
+}
+
+.Todo button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 520px) {
+  .Todo {
+    margin: 20px 12px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .Todo > * + * {
+    margin-top: 14px;
+  }
+
+  .Todo > :nth-child(3) {
+    padding-top: 14px;
+  }
+}
