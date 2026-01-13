@@ -1,0 +1,71 @@
+.TodoItem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.TodoItem input{
+    width: 20px;
+}
+
+.TodoItem .content{
+    flex: 1;
+}
+
+.TodoItem .date{
+    color: gray;
+    font-size: 14px;
+}
+
+.TodoItem button{
+    cursor: pointer;
+    border: none;
+    color: gray;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.TodoItem .done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+}
+
+.TodoItem{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.TodoItem input{
+    width: 20px;
+}
+
+.TodoItem .content{
+    flex: 1;
+}
+
+.TodoItem .date{
+    color: gray;
+    font-size: 14px;
+}
+
+.TodoItem button{
+    cursor: pointer;
+    border: none;
+    color: gray;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.TodoItem .done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+}
