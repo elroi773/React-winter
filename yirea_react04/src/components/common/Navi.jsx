@@ -1,3 +1,4 @@
+import { useReducer } from "react";
 import { Link, useNavigate } from "react-router-dom";
 function Navi() {
   const nav = useNavigate();
@@ -14,6 +15,8 @@ function Navi() {
         <button onClick={onClickButton}>사용자목록 버튼</button>
         <Link to={"/simplecountermenu"}>[간단한 카운터]</Link>
         <Link to={"/todomenu"}>[Todo list 앱]</Link>
+        <Link to={"/reduceexam"}>[useReducer]</Link>
+        <Link to={"/showItem/:id"}>[useParams]</Link>
       </div>
     </>
   );
