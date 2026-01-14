@@ -1,7 +1,8 @@
 import Editor from "../components/todoComponets/Editor";
 import Header from "../components/todoComponets/Header";
 import List from "../components/todoComponets/List";
-import { useState, useRef } from "react";
+import Search from "../components/todoComponets/Search";
+import { useState, useRef, useMemo } from "react";
 import "./TodoApp.css";
 
 const mockData = [
@@ -13,6 +14,14 @@ const mockData = [
 export default function TodoApp() {
   const [todo, setTodo] = useState(mockData);
   const idRef = useRef(3);
+
+  const [search, setSearch] = useState("");
+
+  const filteredTodo = useMemo(() => {
+    const keyword = search.trim().toLowerCase();
+    if (!keyword) return todo;
+    return todo.filter((it) => it.content.toLowerCase().includes(keyword));
+  }, [todo, search]);
 
   const onCreate = (content) => {
     const newTodo = {
@@ -38,7 +47,8 @@ export default function TodoApp() {
     <div className="Todo">
       <Header />
       <Editor onCreate={onCreate} />
-      <List todo={todo} onToggle={onToggle} onRemove={onRemove} />
+      <Search search={search} onSearch={setSearch} />
+      <List todo={filteredTodo} onToggle={onToggle} onRemove={onRemove} />
     </div>
   );
 }
