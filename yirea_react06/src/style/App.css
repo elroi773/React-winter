@@ -1,0 +1,347 @@
+/* App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #22254b;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  position: relative; /* 또는 fixed, sticky */
+
+  /* 다른 요소들보다 무조건 위에 오도록 높은 숫자를 부여합니다 */
+  z-index: 1000;
+}
+
+.loading {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+/* 그리드 레이아웃: 화면 크기에 따라 자동 조절 */
+
+.movie-grid {
+  display: grid;
+  /* PC 화면: 한 줄에 5개씩 강제로 보여주기 */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* 모바일 화면 (768px 이하): 한 줄에 2개씩 보여주기 */
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.movie-card {
+  background-color: #373b69;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #bbb;
+}
+
+.rating {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.overview {
+  font-size: 12px;
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* 상세 페이지 스타일 */
+.detail-container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.back-button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background: white;
+  color: #22254b;
+}
+
+.detail-content {
+  display: flex;
+  gap: 40px;
+  background: rgba(0, 0, 0, 0.7); /* 배경 어둡게 처리 */
+  padding: 40px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+.detail-poster img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.detail-info {
+  flex: 1;
+  color: white;
+}
+
+.detail-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.detail-meta-row {
+  display: flex;
+  gap: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.genres {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.genre-badge {
+  background-color: #e50914; /* 넷플릭스 레드 느낌 */
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.overview-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.overview-section p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* 배경 이미지 효과 */
+.backdrop-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* 배경을 흐릿하고 투명하게 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .detail-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .detail-poster img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+  .detail-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------------- */
+/* 헤더 레이아웃 수정 */
+.header-content {
+  display: flex;
+  justify-content: space-between; /* 양쪽 끝으로 배치 */
+  align-items: center;
+  margin-bottom: 20px;
+
+  width: 100%;
+  gap: 250px;
+  flex-wrap: wrap;
+}
+
+/* 로그인 버튼 및 사용자 정보 */
+.auth-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-welcome {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.nav-button.login {
+  background-color: #e50914;
+  color: white;
+}
+
+.nav-button.logout {
+  background-color: #555;
+  color: white;
+}
+
+.nav-button:hover {
+  opacity: 0.8;
+}
+
+/* 로그인 페이지 스타일 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.login-card {
+  background-color: #373b69;
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #22254b;
+  color: white;
+  font-size: 16px;
+}
+
+.login-input::placeholder {
+  color: #7378c5;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ------------------------------ */
+
+.signup-link {
+  margin-top: 15px;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* 회원가입 버튼 스타일 (로그인 버튼과 다르게) */
+.nav-button.signup {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.nav-button.signup:hover {
+  background-color: white;
+  color: #22254b;
+}
