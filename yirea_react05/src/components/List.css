@@ -1,0 +1,87 @@
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.listItem__left {
+  flex: 1;
+  min-width: 0;
+}
+
+.listItem__info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start; /* ✅ 이름/메일 왼쪽 정렬 */
+  min-width: 0;
+}
+
+.listItem__name {
+  font-weight: 700;
+}
+
+.listItem__email {
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.listItem__input {
+  width: 220px;
+  max-width: 48%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+.listItem__right {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end; /* ✅ 버튼 오른쪽 정렬 */
+  flex-shrink: 0;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #111;
+  font-weight: 700;
+}
+
+/* ✅ 버튼 컬러 요구사항 */
+.btn--edit {
+  background: #ffd54f; /* 노랑 */
+}
+
+.btn--delete {
+  background: #ff5252; /* 빨강 */
+  color: white;
+}
+
+.btn--save {
+  background: #4caf50; /* 초록 */
+  color: white;
+}
+
+.btn--cancel {
+  background: #bdbdbd; /* 회색 */
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
