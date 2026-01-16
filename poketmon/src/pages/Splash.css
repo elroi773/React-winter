@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "SchoolSafetyPuzzleBlack";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimPuzzleTTF-Black.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+.splash {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 300px 20px 56px;
+  box-sizing: border-box;
+}
+
+/* Logo pinned to top area */
+.splash__logo {
+  width: min(400px, 100vw);
+  height: auto;
+  object-fit: contain;
+}
+
+/* Start button near bottom */
+.splash__btn {
+  font-family: "SchoolSafetyPuzzleBlack";
+  width: min(400px, 85vw);
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+
+  background: #FF3334;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.splash__btn:active {
+  transform: translateY(1px);
+}
