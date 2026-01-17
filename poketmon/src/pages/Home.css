@@ -1,0 +1,22 @@
+.homeWrap {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.random {
+  flex: 1;
+  min-width: 320px;
+}
+
+.list {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* (Optional) If the screen is small, stack them */
+@media (max-width: 900px) {
+  .homeWrap {
+    flex-direction: column;
+  }
+}
