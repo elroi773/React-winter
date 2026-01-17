@@ -1,0 +1,357 @@
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+.pokedex {
+  width: min(560px, 92vw);
+  margin: 24px auto;
+  font-family: 'Paperozi';
+  font-weight: 100;
+  position: relative;
+}
+
+/* TOP */
+.pokedex__top {
+  background: #ffffff;
+  border: 2px solid #000;
+  border-bottom: none;
+  border-radius: 26px 26px 0 26px;
+  padding: 18px 18px 22px;
+  position: relative;
+}
+
+.pokedex__topLeds {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  margin-top: 4px;
+}
+
+.pokedex__led {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ff3a3a;
+}
+
+.pokedex__screen {
+  margin: 26px auto 18px;
+  width: 82%;
+  aspect-ratio: 1 / 1;
+  background: #a7d2a7;
+  border: 2px solid #000;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.pokedex__screenInner {
+  width: 72%;
+  height: 72%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.pokedex__img {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+}
+
+.pokedex__status {
+  padding: 14px;
+  text-align: center;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.25;
+}
+
+.pokedex__status--error {
+  color: #b00020;
+}
+
+.pokedex__topControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 6px 0;
+}
+
+.pokedex__buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.pokedex__roundBtn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  background: #ff3a3a;
+  color: #000;
+  font-size: 34px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #ff3a3a, 0 0 0 5px #000;
+}
+
+.pokedex__roundBtn:active {
+  transform: translateY(1px);
+}
+
+.pokedex__speaker {
+  width: 120px;
+  height: 52px;
+  display: grid;
+  align-content: center;
+  justify-items: end;
+  gap: 7px;
+}
+
+.pokedex__speaker span {
+  width: 92px;
+  height: 6px;
+  background: #000;
+  border-radius: 3px;
+}
+
+/* BOTTOM */
+.pokedex__bottom {
+  background: #ff3a3a;
+  border: 2px solid #000;
+  border-top: none;
+  border-radius: 0 0 26px 0;
+  padding: 18px 18px 24px;
+  position: relative;
+}
+
+.pokedex__bars {
+  display: flex;
+  gap: 34px;
+  margin: 2px 0 18px;
+  padding-left: 26px;
+}
+
+.pokedex__bar {
+  width: 160px;
+  height: 6px;
+  border-radius: 999px;
+  opacity: 0.95;
+}
+
+.pokedex__bar--left {
+  background: #e7e7e7;
+}
+
+.pokedex__bar--right {
+  background: #2aa6ff;
+}
+
+.pokedex__bottomMain {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+
+.pokedex__bigCircle {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #9f9f9f;
+  justify-self: start;
+}
+
+.pokedex__mainBtn {
+  font-family: 'Paperozi';
+  width: 220px;
+  height: 84px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  background: #39b67d;
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.pokedex__mainBtn:active {
+  transform: translateY(1px);
+}
+
+.pokedex__dpad {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  justify-self: end;
+}
+
+.pokedex__dpadCross {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  background: #5c5c5c;
+  border: 2px solid #000;
+  border-radius: 16px;
+}
+
+.pokedex__dpadCross::before,
+.pokedex__dpadCross::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background: #5c5c5c;
+  border: 2px solid #000;
+  border-radius: 16px;
+}
+
+.pokedex__dpadCross::before {
+  width: 120px;
+  height: 48px;
+}
+
+.pokedex__dpadCross::after {
+  width: 48px;
+  height: 120px;
+}
+
+.pokedex__dpadCenter {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #9f9f9f;
+  border: 2px solid #000;
+}
+
+.pokedex__dots {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+.pokedex__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6b6b6b;
+}
+
+.pokedex__dot--red {
+  width: 18px;
+  height: 18px;
+  background: #ff3a3a;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 0 5px #fff;
+}
+
+/* 작은 정보 표시(기능 요구사항엔 없지만 디버깅/UX용) */
+.pokedex__meta {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.pokedex__metaName {
+  font-size: 16px;
+}
+
+.pokedex__metaTypes {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+@media (max-width: 420px) {
+  .pokedex__roundBtn {
+    width: 58px;
+    height: 58px;
+    font-size: 30px;
+  }
+
+  .pokedex__mainBtn {
+    width: 200px;
+    height: 78px;
+    font-size: 26px;
+  }
+
+  .pokedex__bigCircle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pokedex__dpad {
+    width: 120px;
+    height: 120px;
+  }
+}
+
