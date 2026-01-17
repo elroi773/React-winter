@@ -1,0 +1,188 @@
+.battlePage {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 상단: 포켓몬 2마리 영역 */
+.battleTop {
+  height: calc(100vh - 210px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 70px 80px 0 80px;
+  box-sizing: border-box;
+}
+
+/* 각 슬롯 */
+.slot {
+  width: 46%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.slot--left {
+  align-items: flex-start;
+}
+
+.slot--right {
+  align-items: flex-end;
+}
+
+/* 원형 영역(이미지 들어가는 곳) */
+.pokeCircle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/* 포켓몬 이미지 */
+.pokeImg {
+  width: 270px;
+  height: 270px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 상태 텍스트 */
+.slotStatus {
+  width: 260px;
+  text-align: center;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.slotStatus--error {
+  background: rgba(255, 80, 80, 0.75);
+  color: #111;
+}
+
+/* 이름/레벨 바 */
+.infoBar {
+  width: 420px;
+  height: 80px;
+  background: rgba(220, 220, 220, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  box-sizing: border-box;
+  font-weight: 900;
+  font-size: 22px;
+  color: #111;
+}
+
+.infoBar--left {
+  margin-left: 10px;
+}
+
+.infoBar--right {
+  margin-right: 10px;
+}
+
+.infoName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 280px;
+}
+
+.infoLv {
+  font-size: 22px;
+}
+
+/* 하단 바 */
+.battleBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 210px;
+  background: rgba(70, 130, 140, 0.95);
+  border-top: 8px solid rgba(235, 90, 75, 1);
+  box-shadow: inset 0 0 0 6px rgba(35, 35, 35, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 40px;
+  box-sizing: border-box;
+}
+
+.battleQuestion {
+  font-size: 56px;
+  font-weight: 900;
+  color: #0a0a0a;
+  letter-spacing: -1px;
+}
+
+/* 버튼 2x2 */
+.battleBtns {
+  display: grid;
+  grid-template-columns: 240px 240px;
+  grid-template-rows: 70px 70px;
+  gap: 18px 22px;
+}
+
+.battleBtn {
+  border: 3px solid #111;
+  border-radius: 18px;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.45);
+}
+
+.battleBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.45);
+}
+
+.battleBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* 예시 느낌 색 */
+.battleBtn--fight {
+  background: #f3b2b9;
+}
+
+.battleBtn--stay {
+  background: #d89428;
+}
+
+.battleBtn--catch {
+  background: #6aa23d;
+}
+
+.battleBtn--run {
+  background: #2f79a8;
+}
+
+/* 작은 화면 대응 */
+@media (max-width: 1100px) {
+  .battleTop {
+    padding: 50px 24px 0 24px;
+  }
+  .infoBar {
+    width: 340px;
+    font-size: 18px;
+  }
+  .battleQuestion {
+    font-size: 40px;
+  }
+  .battleBtns {
+    grid-template-columns: 200px 200px;
+  }
+}
